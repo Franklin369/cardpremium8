@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #000;
+    color: white;
+}
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./img/estrellasVarias.svg");
+    padding: 30px;
+    gap: 15px;
+    @media (max-width: 576px) {
+        flex-direction: column;
+    }
+    .card{
+        position: relative;
+        cursor: pointer;
+        border: 1px solid #4d4d4d;
+        width: 50%;
+        height: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 14px;
+        overflow: hidden;
+        padding: 20px;
+        @media (max-width: 576px) {
+            width: 100%;
+        }
+        .content-text{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            .titulo {
+                font-size: 35px;
+                font-weight: 700;
+            }
+            .descripcion {
+                font-size: 14px;
+            }
+
+        }
+        .contentsvg{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            bottom: -500px;
+            transition:cubic-bezier(0.4, 0, 0.2, 1) 0.6s;
+        }
+        .cuadros{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            transition: cubic-bezier(0.4, 0, 0.2, 1) 0.6s;
+        }
+        &:hover{
+            .contentsvg{
+                bottom:-100px;
+            }
+            .cuadros{
+                transform:rotate(37deg)  rotateX(5deg) rotateY(12deg) skew(2deg) skewY(1deg) scaleX(1.2) scaleY(1.2);
+            }
+        }
+        &.secundaria{
+            .cuadros-secundario{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                transition: cubic-bezier(0.4, 0, 0.2, 1) 0.6s;
+                bottom: -80px;
+                opacity: 0.4;
+
+            }
+            &:hover{
+                .cuadros-secundario{
+                    transform: translateY(-30px);
+                    opacity: 1;
+                    
+                }
+            }
+        }
+
+
+
+    }
+
+}
